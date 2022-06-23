@@ -1,4 +1,4 @@
-# Web-Snake-Game
+# Web Snake Game
 ## Author: Joel Lozano
 
 Simple Snake game written in Javascript, to be played in the browser. I decided to build this game to
