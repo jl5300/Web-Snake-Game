@@ -42,8 +42,6 @@ let score = 0;
 let over = false;
 let paused = false;
 
-document.body.addEventListener('keydown', keyDown);
-
 function drawGame() {
 	if (paused) {
 		ctx.fillStyle = 'white';
@@ -136,7 +134,7 @@ function moveFood() {
 function drawScore() {
 	ctx.fillStyle="white";
 	ctx.font="16px helvetica";
-	ctx.fillText("Score: " + score, canvas.clientWidth - 85, 25);
+	ctx.fillText("Score: " + score, canvas.clientWidth - 60, 25);
 }
 
 function keyDown(event) {
@@ -221,6 +219,7 @@ function togglePause() {
 }
 
 (function mainline() {
+	document.body.addEventListener('keydown', keyDown);
 	over = false;
 	// Randomize food location at start of each game for increased fun
 	initializeFood();
