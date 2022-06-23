@@ -1,0 +1,19 @@
+body {
+	font-family: Helvetica;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	font-size: 60px;
+}
+
+canvas {
+	box-shadow: black 10px 5px 25px;
+}
+
+#pausemsg {
+	padding-top: 25px;
+}
