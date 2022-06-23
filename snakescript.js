@@ -18,6 +18,10 @@ const speed = 7;
 const tileCount = 23;
 const tileSize = 18;
 
+// Sound files
+const eatSound = new Audio('boop.mp3');
+const gameOverSound = new Audio('bonk.mp3');
+
 // Snake position and velocities
 let x_head = 10;
 let y_head = 10;
@@ -51,6 +55,7 @@ function drawGame() {
 		updateSnakePosition();
 
 		if (gameIsOver()) {
+			gameOverSound.play();
 			gameOverScreen();
 			over = true;
 			return;
@@ -61,9 +66,10 @@ function drawGame() {
 
 		/*
 		* If snake has eaten food, move it to a new location,
-		* increase length of snake, and increment score
+		* play sfx, increase length of snake, and increment score
 		*/
 		if (x_food === x_head && y_food === y_head) {
+			eatSound.play();
 			moveFood();
 			snakeParts.push(new snakePart(x_head, y_head));
 			score++;
