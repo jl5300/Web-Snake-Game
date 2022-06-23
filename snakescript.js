@@ -63,7 +63,7 @@ function drawGame() {
 		* If snake has eaten food, move it to a new location,
 		* increase length of snake, and increment score
 		*/
-		if (x_food == x_head && y_food == y_head) {
+		if (x_food === x_head && y_food === y_head) {
 			moveFood();
 			snakeParts.push(new snakePart(x_head, y_head));
 			score++;
@@ -117,7 +117,7 @@ function updateSnakePosition() {
 function initializeFood() {
 	moveFood();
 
-	while (x_food == x_head && y_food == y_head)
+	while (x_food === x_head && y_food === y_head)
 		moveFood();
 }
 
@@ -139,13 +139,13 @@ function drawScore() {
 
 function keyDown(event) {
 	if (over) {
-		if (event.keyCode == SPACE_KEYCODE)
+		if (event.keyCode === SPACE_KEYCODE)
 			location.reload();
 	}
 	else {
 		switch (event.keyCode) {
 			case LEFT_KEYCODE:
-				if (x_velocity == 1)
+				if (x_velocity === 1)
 					return;
 
 				x_velocity = -1;
@@ -153,7 +153,7 @@ function keyDown(event) {
 				break;
 
 			case DOWN_KEYCODE:
-				if (y_velocity == 1)
+				if (y_velocity === 1)
 					return;
 
 				x_velocity = 0;
@@ -161,7 +161,7 @@ function keyDown(event) {
 				break;
 
 			case RIGHT_KEYCODE:
-				if (x_velocity == -1)
+				if (x_velocity === -1)
 					return;
 
 				x_velocity = 1;
@@ -169,7 +169,7 @@ function keyDown(event) {
 				break;
 
 			case UP_KEYCODE:
-				if (y_velocity == -1)
+				if (y_velocity === -1)
 					return;
 
 				x_velocity = 0;
@@ -185,19 +185,19 @@ function keyDown(event) {
 
 function gameIsOver() {
 	// If game hasn't started yet, return false
-	if (x_velocity == 0 && y_velocity == 0)
+	if (x_velocity === 0 && y_velocity === 0)
 		return false;
 
 	let ret = false;
 
 	// If snake bumps into a wall, return true
-	if (x_head < 0 || x_head == tileCount ||
-		y_head < 0 || y_head == tileCount)
+	if (x_head < 0 || x_head === tileCount ||
+		y_head < 0 || y_head === tileCount)
 		ret = true;
 
 	// If snake bumps into itself, return true
 	for (const part of snakeParts) {
-		if (part.x == x_head && part.y == y_head) {
+		if (part.x === x_head && part.y === y_head) {
 			ret = true;
 			break;
 		}
