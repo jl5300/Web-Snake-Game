@@ -1,5 +1,5 @@
 // Howler library for sound support
-// const {Howl, Howler} = require('howler');
+// const {Howl, Howler} = require('node_modules/howler');
 
 // HTML elements
 const canvas = document.getElementById('game');
@@ -24,6 +24,7 @@ const tileSize = 18;
 // Sound files
 const eatSound = new Audio('boop.mp3');
 const gameOverSound = new Audio('bonk.mp3');
+
 // const eatSound = new Howl({
 // 	src: ['boop.mp3']
 // });
