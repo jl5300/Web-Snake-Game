@@ -1,3 +1,6 @@
+// Howler library for sound support
+// const {Howl, Howler} = require('howler');
+
 // HTML elements
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
@@ -21,6 +24,13 @@ const tileSize = 18;
 // Sound files
 const eatSound = new Audio('boop.mp3');
 const gameOverSound = new Audio('bonk.mp3');
+// const eatSound = new Howl({
+// 	src: ['boop.mp3']
+// });
+
+// const gameOverSound = new Howl({
+// 	src: ['bonk.mp3']
+// });
 
 // Snake position and velocities
 let x_head = 10;
