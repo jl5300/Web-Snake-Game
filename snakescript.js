@@ -143,7 +143,7 @@ function initializeFood() {
 }
 
 function drawFood() {
-	ctx.fillStyle = "red";
+	ctx.fillStyle = "white";
 	ctx.fillRect(x_food * tileCount, y_food * tileCount, tileSize, tileSize);
 }
 
