@@ -10,6 +10,7 @@ ctx.textBaseline = 'middle';
 ctx.textAlign = 'center';
 
 // Keycodes for event listener
+const ENTER_KEYCODE = 13;
 const SPACE_KEYCODE = 32;
 const LEFT_KEYCODE = 37;
 const DOWN_KEYCODE = 38;
@@ -156,7 +157,8 @@ function drawScore() {
 
 function keyDown(event) {
 	if (over) {
-		if (event.keyCode === SPACE_KEYCODE)
+		if (event.keyCode === SPACE_KEYCODE ||
+			event.keyCode === ENTER_KEYCODE)
 			location.reload();
 	}
 	else {
@@ -228,7 +230,7 @@ function gameOverScreen() {
 	ctx.font = '50px helvetica';
 	ctx.fillText('Game over!', canvas.clientWidth / 2, canvas.clientHeight / 2);
 	ctx.font = '20px helvetica';
-	ctx.fillText('Press space to play again.', canvas.clientWidth / 2, canvas.clientHeight * 3 / 5);
+	ctx.fillText('Press space or enter to play again.', canvas.clientWidth / 2, canvas.clientHeight * 3 / 5);
 }
 
 function togglePause() {
