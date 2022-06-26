@@ -48,6 +48,7 @@ class snakePart {
 	}
 }
 const snakeParts = [];
+const bodyColors = [];
 
 // Food position
 let x_food = 5;
@@ -84,6 +85,7 @@ function drawGame() {
 			eatSound.play();
 			moveFood();
 			snakeParts.push(new snakePart(x_head, y_head));
+			bodyColors.push('hsl(' + 360 * Math.random() + ', 50%, 50%)');
 			score++;
 		}
 
@@ -106,8 +108,9 @@ function drawSnake() {
 	ctx.fillRect(x_head * tileCount, y_head * tileCount, tileSize, tileSize);
 
 	// Draw body
-	ctx.fillStyle = 'green';
-	for (const part of snakeParts) {
+	for (let i = 0; i < snakeParts.length; i++) {
+		part = snakeParts[i];
+		ctx.fillStyle = bodyColors[i];
 		ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
 	}
 }
