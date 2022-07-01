@@ -23,16 +23,17 @@ const tileCount = 23;
 const tileSize = 18;
 
 // Sound files
-const eatSound = new Audio('boop.mp3');
-const gameOverSound = new Audio('bonk.mp3');
+// const eatSound = new Audio('boop.mp3');
+// const gameOverSound = new Audio('bonk.mp3');
 
-// const eatSound = new Howl({
-// 	src: ['boop.mp3']
-// });
-
-// const gameOverSound = new Howl({
-// 	src: ['bonk.mp3']
-// });
+let sfx = {
+	eat: new Howl({
+		src: 'boop.mp3'
+	}),
+	gameOver: new Howl({
+		src: 'bonk.mp3'
+	})
+}
 
 // Snake position and velocities
 let x_head = 10;
@@ -68,7 +69,7 @@ function drawGame() {
 		updateSnakePosition();
 
 		if (gameIsOver()) {
-			gameOverSound.play();
+			sfx.gameOver.play();
 			gameOverScreen();
 			over = true;
 			return;
@@ -82,7 +83,7 @@ function drawGame() {
 		* play sfx, increase length of snake, and increment score
 		*/
 		if (x_food === x_head && y_food === y_head) {
-			eatSound.play();
+			sfx.eat.play();
 			moveFood();
 			snakeParts.push(new snakePart(x_head, y_head));
 			bodyColors.push('hsl(' + 360 * Math.random() + ', 50%, 50%)');
