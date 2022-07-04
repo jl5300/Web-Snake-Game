@@ -6,7 +6,7 @@ get some hands-on practice with basic web development.
 
 ### To Play:
 
-Run snakeserver.js in a terminal and navigate to localhost:8080 in a browser window.
+Run snakeserver.js in a terminal and navigate to localhost:8080/snakegame.html in a browser window.
 That's it!
 
 Sound effects downloaded from youtube.com.
