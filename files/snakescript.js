@@ -199,6 +199,7 @@ function keyDown(event) {
 				y_velocity = 1;
 				break;
 
+			case ENTER_KEYCODE:
 			case SPACE_KEYCODE:
 				togglePause();
 				break;
