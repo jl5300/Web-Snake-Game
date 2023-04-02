@@ -16,7 +16,7 @@ const UP_KEYCODE = 40;
 
 // Constants for display
 const speed = 7;
-const tileCount = 23;
+const tileCount = 22;
 const tileSize = 18;
 
 // Sound files
